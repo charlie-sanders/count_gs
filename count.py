@@ -13,7 +13,7 @@ with open('g_lines.txt', 'w') as x:
         x.write(line)
 
 
-# Open g lines and count every occurence of  the letters 'ɡɪ'
+# Open g lines and count every occurence of hard gs, assume not hard is soft.
 hard_g_count = 0
 soft_g_count = 0
 all_gs = 0
