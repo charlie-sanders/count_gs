@@ -31,6 +31,8 @@ with open('g_lines.txt') as x:
                 word[i] == 'ɡ' and word[i+1] == 'ɝ':
             hard_g_count += 1
             print(f'Hard g -> {line}')
+        else:
+            print(f'Soft g -> {line}')
 
 # Just assume everything not hard is soft
 soft_g_count = all_gs - hard_g_count
