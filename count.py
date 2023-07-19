@@ -13,7 +13,7 @@ with open('g_lines.txt', 'w') as x:
         x.write(line)
 
 
-# Open g lines and count every occurence of hard gs, assume not hard is soft.
+# Open g lines and count every occurrence of hard gs, assume not hard is soft.
 hard_g_count = 0
 soft_g_count = 0
 all_gs = 0
@@ -23,12 +23,13 @@ with open('g_lines.txt') as x:
     for line in lines:
         for i in range(len(line)):
             if line[i] == 'ɡ' and line[i + 1] == 'ɪ' or \
-                    line[i] == 'ʒ' and line[i + 1] == 'ɪ':
+                    line[i] == 'ʒ' and line[i + 1] == 'ɪ' or \
+                    line[i] == 'ɡ' and line[i+1] == 'ɝ':
                 hard_g_count += 1
 
 # Just assume everything not hard is soft
 soft_g_count = all_gs - hard_g_count
 
 print('Hard G count: ', hard_g_count)
-print('Soft G count: ', soft_g_count)
-print('All Gs: ', all_gs)
+print('\nSoft G count: ', soft_g_count)
+print('\nAll words starting in "GI": ', all_gs)
