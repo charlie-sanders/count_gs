@@ -2,8 +2,8 @@
 
 ## Program Output
 
-Hard G count:  380
+Hard G count:  279
 
-Soft G count:  145
+Soft G count:  246
 
 All words starting in "GI":  525
