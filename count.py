@@ -21,11 +21,16 @@ with open('g_lines.txt') as x:
     lines = x.readlines()
     all_gs = len(lines)
     for line in lines:
-        for i in range(len(line)):
-            if line[i] == 'ɡ' and line[i + 1] == 'ɪ' or \
-                    line[i] == 'ʒ' and line[i + 1] == 'ɪ' or \
-                    line[i] == 'ɡ' and line[i+1] == 'ɝ':
-                hard_g_count += 1
+        # Strip out everything after /'
+        line_idx = line.index('/')
+        word = line[line_idx+2:-2]
+        i = 0
+
+        if word[i] == 'ɡ' and word[i + 1] == 'ɪ' or \
+                word[i] == 'ʒ' and word[i + 1] == 'ɪ' or \
+                word[i] == 'ɡ' and word[i+1] == 'ɝ':
+            hard_g_count += 1
+            print(f'Hard g -> {line}')
 
 # Just assume everything not hard is soft
 soft_g_count = all_gs - hard_g_count
